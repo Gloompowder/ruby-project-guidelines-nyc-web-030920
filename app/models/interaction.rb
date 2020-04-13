@@ -1,4 +1,4 @@
-class Interation < ActiveRecord::Base 
+class Interaction < ActiveRecord::Base 
     belongs_to :plant
     belongs_to :user
     belongs_to :forecast

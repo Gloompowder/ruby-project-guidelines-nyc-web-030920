@@ -3,6 +3,7 @@ Plant.destroy_all
 Forecast.destroy_all 
 Ownership.destroy_all 
 Interaction.destroy_all
+
 u1 = User.create(name: "Meg Griffin", location: "Quahog, Rhode Island")
 u2 = User.create(name: "Edward Cullen", location: "Fork, Washington")
 u3 = User.create(name: "Bella Swan", location: "Fork, Washington")
@@ -15,6 +16,80 @@ u9 = User.create(name: "Instagrammer", location: "Los Angeles, California")
 u10 = User.create(name: "Homer Simpson", location: "Springfield, Ohio")
 u11 = User.create(name: "Neil Patrick Harris", location: "New York, New York")
 
+p1 = Plant.create(nickname: "Princess Morebucks", common_name: "Money Tree", scientific_name: "dolores mores", temperature_maximum: 91, temperature_minimum: 30, percipitation_maximum: "1l", percipitiation_minimum: "100ml", moisture_use: "30%", fruit_seed_period: "12 weeks", serial: 13412)
+p2 = Plant.create(nickname: "Cactus Everdeen", common_name: "Cactus", scientific_name: "Spinia Touchia", temperature_maximum: 115, temperature_minimum: 60, percipitation_maximum: "1.5l", percipitiation_minimum: "50ml", moisture_use: "4%", fruit_seed_period: "17 weeks", serial: 13447)
+
+o1 = Ownership.create(user_id: User.first.id, plant_id: Plant.first.id)
+o2 = Ownership.create(user_id: User.first.id, plant_id: Plant.second.id)
+
+f1 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f2 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f3 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f4 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f5 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f6 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f7 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f8 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f9 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f10 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f11 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f12 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f13 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f14 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f15 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f16 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f17 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f18 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f19 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f20 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f21 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f22 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f23 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f24 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f25 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f26 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f27 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f28 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f29 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f30 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f31 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f32 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f33 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f34 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f35 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f36 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f37 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f38 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f39 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f40 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f41 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f42 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f43 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f44 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f45 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f46 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f47 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f48 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f49 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f50 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f51 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f52 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f53 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f54 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f55 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f56 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f57  = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f58 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f59 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f60 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f61= Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f62 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+f63 = Forecast.create(date: "February 2nd, 2020", time: "13:00", weather: "Snowing", temperature: "14°", humidity: "nil")
+f64 = Forecast.create(date: "February 12th, 2020", time: "23:00", weather: "Snowing", temperature: "4°", humidity: "11%")
+
+i1 = Interaction.create(action: "put inside", user_id: User.first.id, plant_id: Plant.first.id, forecast_id: Forecast.first.id)
+
+
 # p1 = Plant.create(nickname: "Cactus Everdeen", common_name: "heather", scientific_name: "")
 # t.string :nickname 
 # t.string :common_name 
@@ -25,3 +100,9 @@ u11 = User.create(name: "Neil Patrick Harris", location: "New York, New York")
 # t.string :percipitiation_minimum 
 # t.string :moisture_use 
 # t.string :fruit_seed_period
+# FORECAST
+# t.string :date 
+# t.string :time 
+# t.string :weather 
+# t.string :temperature 
+# t.string :humidity 

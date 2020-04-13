@@ -6,3 +6,7 @@ gem "sqlite3"
 gem "pry"
 gem "require_all"
 gem 'bundler'
+gem 'rest-client'
+gem 'json'
+gem 'rake'
+gem 'tty-prompt'

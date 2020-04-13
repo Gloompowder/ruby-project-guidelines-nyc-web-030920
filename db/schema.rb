@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200410143013) do
+ActiveRecord::Schema.define(version: 20200410135239) do
 
   create_table "forecasts", force: :cascade do |t|
     t.string "date"
@@ -36,13 +36,11 @@ ActiveRecord::Schema.define(version: 20200410143013) do
     t.string  "nickname"
     t.string  "common_name"
     t.string  "scientific_name"
-    t.integer "temperature_maximum"
-    t.integer "temperature_minimum"
-    t.string  "percipitation_maximum"
-    t.string  "percipitiation_minimum"
+    t.float   "temperature_minimum"
+    t.float   "percipitation_maximum"
+    t.float   "percipitiation_minimum"
     t.string  "moisture_use"
-    t.string  "fruit_seed_period"
-    t.integer "api_id"
+    t.integer "serial"
   end
 
   create_table "users", force: :cascade do |t|
