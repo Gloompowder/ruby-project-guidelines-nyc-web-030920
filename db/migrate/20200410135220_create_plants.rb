@@ -6,7 +6,7 @@ class CreatePlants < ActiveRecord::Migration[5.0]
       t.string :scientific_name 
       t.float :temperature_minimum 
       t.float :percipitation_maximum 
-      t.float :percipitiation_minimum 
+      t.float :percipitation_minimum 
       t.string :moisture_use 
       t.integer :serial
     end

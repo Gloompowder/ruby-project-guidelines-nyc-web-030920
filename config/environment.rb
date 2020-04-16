@@ -10,4 +10,4 @@ require_all 'app'
 require_all 'db/migrate'
 
 # To turn off completely, just add this to your environment file (i.e. production.rb):  
-# config.active_record.logger = nil
+ActiveRecord::Base.logger = nil
