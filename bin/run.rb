@@ -3,30 +3,39 @@ require 'rest-client'
 require 'json'
 prompt = TTY::Prompt.new
 
-api_beginning = "https://trefle.io/api/plants/"
-my_key = "/?token=Z1dsRU13S2pibDFhbFJrWm1nZTlNZz09"
 
+api_beginning = "https://trefle.io/api/plants/"
+api_end = "/?token="
+puts ENV["PLANT_API_KEY"]
 puts "What's your name?"
 name = gets.strip 
 puts "\n\n\n\n\n\n"
-print TTY::Box.frame "Hello #{name}!"
+puts"
+       OOO    <3
+      OOOOO   
+  <3   OOO    
+        |     <3
+<3      | /    
+        |/        
+"
+print TTY::Box.frame "Hello #{name}!" 
 user = User.find_by(name: name)
 if !user 
     confirm = prompt.select("Please save youself as a new user by selecting Users in the Main Menu and the New Profile tab.", ["Ok"])
 end
-
+plant_emojis_rand = plant_emojis[rand.(plant_emojis.size)]
 # puts box
 puts "Welcome to Logger! We help log interactions between users and their plants."
-main_menu = ["Plants", "Users", "Interactions", "Forecast", "Log Out"]
+main_menu = ["Plants💐", "Users👤", "Interactions💚", "Forecast⛅️", "Log Out"]
     main_choice = nil 
         while main_choice != "Log Out"
             main_choice = prompt.select("This is the main menu.", main_menu)
-            if main_choice == "Plants"
-                plant_menu = ["New Plant", "Change Owner", "Delete Plant", "My Plants",  "Exit"]
+            if main_choice == "Plants💐"
+                plant_menu = ["New Plant🌱", "Change Owner", "Delete Plant🥀", "My Plants",  "Exit"]
                 plant_choice = nil 
                 while plant_choice != "Exit"
                     plant_choice = prompt.select("What's next?", plant_menu)
-                    if plant_choice == "New Plant"
+                    if plant_choice == "New Plant🌱"
                         puts "What's your new plant's nickname?"
                         nickname = gets.strip 
                         puts "Please enter your new plant's scientific name. If you don't know what it is, please leave it blank.\n"
@@ -49,13 +58,13 @@ main_menu = ["Plants", "Users", "Interactions", "Forecast", "Log Out"]
                         moisture_use: plant_info["main_species"]["growth"]["moisture_use"],
                         serial: id)
                             Ownership.create(user_id: User.find_by(name: name).id, plant_id: Plant.find_by(nickname: nickname, scientific_name: plant["#{nickname}"].scientific_name).id)
-                            puts "You have added the plant into your collection.\n"
+                            puts "You have added the plant into your collection.✅\n"
                     # end
                     elsif plant_choice == "My Plants"
                         my_plant_set =  user.plants.map do |t| t. nickname end << "Exit"
                         my_plant_data = nil 
                         while my_plant_data != "Exit"
-                            my_plant_data = prompt.select("What would you like to look up?", my_plant_set)
+                            my_plant_data = prompt.select("What would you like to look up?🔍", my_plant_set)
                             if my_plant_data != "Exit"
                                 detailed_info = ["Common Name", "Scientific Name", "Temperature Minimum", "Precipitation Maximum", "Precipitation Minimum", "Moisture Use", "Serial", "Exit"]
                                 detailed_info_choice = nil 
@@ -96,13 +105,13 @@ main_menu = ["Plants", "Users", "Interactions", "Forecast", "Log Out"]
                                 user_plant = user.plants.map do |t| t.nickname end << "Exit"
                             end
                         end
-                    elsif plant_choice == "Delete Plant" 
+                    elsif plant_choice == "Delete Plant🥀" 
                         user_plant = User.all.find_by(name: "#{name}").plants.map do |t| t.nickname end << "Exit"
                         user_plant_choice = nil 
                         while user_plant_choice != "Exit" 
-                            user_plant_choice = prompt.select("Which plant are you deleting?", user_plant)
+                            user_plant_choice = prompt.select("Which plant are you deleting?🗑", user_plant)
                             if user_plant_choice != "Exit"
-                                puts "Ok, #{user_plant_choice} the #{Plant.find_by(nickname: "#{user_plant_choice}")}is now deleted."
+                                puts "Ok, #{user_plant_choice} the #{Plant.find_by(nickname: "#{user_plant_choice}")}is now deleted.🥀"
                                 Ownership.find_by(plant: Plant.find_by(nickname: "#{user_plant_choice}")).destroy
                                 Plant.find_by(nickname: "#{user_plant_choice}").destroy
                                 user_plant = User.all.find_by(name: "#{name}").plants.map do |t| t.nickname end << "Exit"
@@ -110,7 +119,7 @@ main_menu = ["Plants", "Users", "Interactions", "Forecast", "Log Out"]
                         end
                     end
                 end
-            elsif main_choice == "Users"
+            elsif main_choice == "Users‍👤"
                 user_menu = ["New Profile", "My Plants", "Change Location", "Delete Profile",  "Exit"]
                 user_choice = nil 
                 while user_choice != "Exit"
@@ -182,7 +191,7 @@ main_menu = ["Plants", "Users", "Interactions", "Forecast", "Log Out"]
                         end
                     end 
                 end
-            elsif main_choice == "Forecast"
+            elsif main_choice == "Forecast⛅️"
                 forecast_menu = ["Mini Forecast", "Saved Forecast", "Exit"]
                 forecast_choice = nil 
                 while forecast_choice != "Exit"
@@ -221,7 +230,7 @@ main_menu = ["Plants", "Users", "Interactions", "Forecast", "Log Out"]
                                 forecast1 = Forecast.create(date: "#{Date.today}", time: nil, weather: "#{date_weather}", temperature: "#{date_temperature}", humidity: "#{date_humidity}")
                             end
                         end
-                    elsif forecast_choice == "Saved Forecast" 
+                    elsif forecast_choice == "Saved Forecast📅" 
                     forecast_saved = Forecast.all.map do |d| d.date end.uniq << "Exit"
                     forecast_saved_choice = nil 
                         while forecast_saved_choice != "Exit"
@@ -243,8 +252,8 @@ main_menu = ["Plants", "Users", "Interactions", "Forecast", "Log Out"]
                         end
                     end
                 end 
-            elsif main_choice == "Interactions"
-                inter_menu = ["New Interaction", "Exit"]
+            elsif main_choice == "Interactions💚"
+                inter_menu = ["New Interaction", "Saved Interactions", "Exit"]
                 inter_choice = nil 
                 while inter_choice!= "Exit"
                     inter_choice = prompt.select("What's next?", inter_menu)

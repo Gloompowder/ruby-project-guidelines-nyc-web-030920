@@ -1,5 +1,6 @@
 require 'bundler'
 require 'tty-prompt'
+require 'dotenv/load'
 
 Bundler.require
 
