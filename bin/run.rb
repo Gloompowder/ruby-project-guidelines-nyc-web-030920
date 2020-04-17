@@ -137,33 +137,33 @@ while main_choice != "Log Out"
             elsif user_choice == "My Plants" 
                 my_plant_list = User.find_by(name: "#{name}").plants.map do |t| t. nickname end 
                 my_plant_set = my_plant_list << "Exit"
-                    my_plant_data = nil 
-                    while my_plant_data != "Exit"
-                        my_plant_data = prompt.select("What would you like to look up?", my_plant_set)
-                        if my_plant_data != "Exit"
-                            detailed_info = ["Common Name", "Scientific Name", "Temperature Minimum", "Precipitation Maximum", "Precipitation Minimum", "Moisture Use", "Serial", "Exit"]
-                            detailed_info_choice = nil 
-                            while detailed_info_choice != "Exit"
-                                detailed_info_choice = prompt.select("Here are your choices.\n", detailed_info)
-                                chosen_plant = Plant.find_by(nickname: "#{my_plant_data}")
-                                if detailed_info_choice == "Common Name"
-                                    puts chosen_plant.common_name
-                                elsif detailed_info_choice == "Scientific Name"
-                                    puts chosen_plant.scientific_name
-                                elsif detailed_info_choice == "Temperature Minimum"
-                                    puts chosen_plant.temperature_minimum
-                                elsif detailed_info_choice == "Precipitation Maximum"
-                                    puts chosen_plant.percipitation_maximum
-                                elsif detailed_info_choice == "Precipitation Minimum"
-                                    puts chosen_plant.percipitation_minimum
-                                elsif detailed_info_choice == "Moisture Use"
-                                    puts chosen_plant.moisture_use
-                                elsif detailed_info_choice == "Serial"
-                                    puts chosen_plant.serial
-                                end
+                my_plant_data = nil 
+                while my_plant_data != "Exit"
+                    my_plant_data = prompt.select("What would you like to look up?", my_plant_set)
+                    if my_plant_data != "Exit"
+                        detailed_info = ["Common Name", "Scientific Name", "Temperature Minimum", "Precipitation Maximum", "Precipitation Minimum", "Moisture Use", "Serial", "Exit"]
+                        detailed_info_choice = nil 
+                        while detailed_info_choice != "Exit"
+                            detailed_info_choice = prompt.select("Here are your choices.\n", detailed_info)
+                            chosen_plant = Plant.find_by(nickname: "#{my_plant_data}")
+                            if detailed_info_choice == "Common Name"
+                                puts chosen_plant.common_name
+                            elsif detailed_info_choice == "Scientific Name"
+                                puts chosen_plant.scientific_name
+                            elsif detailed_info_choice == "Temperature Minimum"
+                                puts chosen_plant.temperature_minimum
+                            elsif detailed_info_choice == "Precipitation Maximum"
+                                puts chosen_plant.percipitation_maximum
+                            elsif detailed_info_choice == "Precipitation Minimum"
+                                puts chosen_plant.percipitation_minimum
+                            elsif detailed_info_choice == "Moisture Use"
+                                puts chosen_plant.moisture_use
+                            elsif detailed_info_choice == "Serial"
+                                puts chosen_plant.serial
                             end
                         end
                     end
+                end
             elsif user_choice == "Change Location" 
                 location_menu = ["#{User.find_by(name: "#{name}").location}"] << "Exit"
                 location_choice = nil 
